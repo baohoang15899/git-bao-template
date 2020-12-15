@@ -1,0 +1,108 @@
+/* ====================== 1, HEADER ====================== */
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 24px 16px;
+    z-index: 999;
+    transition-duration: 0.4s;
+    &.change__active{
+        transition-duration: 0.4s;
+        @include paddingTB(16px,16px);
+        background-color: $color-black;
+    }
+    &__section{
+        @include flex-customized(space-between,center,row)
+    }
+        &__logo{
+            @include paddingTB(5px,5px);
+            margin-right: 16px;
+            width: 182px;
+            transition-duration: 0.4s;
+           &.logo__active{
+            transition-duration: 0.4s;
+            width: 142px;
+        }
+        }
+    &__mobile{
+        display: none;
+    }
+    &__nav{
+        display: flex;
+        font-family: $fontMont;
+        font-weight: 400;
+        line-height: 23px;
+        @include fontCustomized(15px,white,normal);
+        text-transform: uppercase;
+    }
+    &__item{
+        &:nth-child(1){
+            margin-right: 16px;
+        }
+        &:nth-child(2){
+            margin-right: 16px;
+        }
+        &:nth-child(3){
+            margin-right: 16px;
+        }
+        &:nth-child(4){
+            margin-right: 16px;
+        }
+    }
+    &__link{
+        color: white;
+        padding: 8px;
+        transition-duration: 0.2s;
+        letter-spacing: 1px;
+        &:hover{
+            transition-duration: 0.2s;
+            color: $color-yellow;
+        }
+        &.highlight__active{
+            color: $color-yellow;
+        }
+    }
+    @include max-breakpoint(992){
+        @include paddingTB(16px,16px);
+        background-color: $color-black;
+        &__section{
+            flex-wrap: wrap;
+        }
+        &__logo{
+            width: 142px;
+        }
+        &__icon{
+            margin-left: 5px;
+        }
+        &__mobile{
+            display: block;
+            background-color: $color-yellow;
+            @include fontCustomized(12px,white,normal);
+            line-height: 12px;
+            font-family: $fontMont;
+            font-weight: 400;
+            text-transform: uppercase;
+            padding: 12px 12px;
+            border-radius: 5px;
+        }
+        &__nav{
+            flex-basis: 100%;
+            flex-direction: column;
+            max-height: 0vh;
+            overflow: hidden;
+            transition: all ease-in-out 0.5s;
+            &.menu__active{
+                max-height: 100vh;
+                transition: all ease-in-out 0.5s;
+            }
+        }
+        &__link{
+            padding: initial;
+            @include paddingTB(8px,8px);
+        }
+        &__item{
+            @include paddingTB(8px,8px);
+        }
+    }    
+}

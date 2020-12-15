@@ -1,0 +1,10 @@
+html,body
+{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
+@import 'settings/index.scss';
+@import 'common/index.scss';
+@import 'layouts/index.scss';
+@import 'pages/home/index.scss';

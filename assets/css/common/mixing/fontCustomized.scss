@@ -1,0 +1,5 @@
+@mixin fontCustomized($size:20px,$color:white,$style:normal) {
+    font-size: $size;
+    color: $color;
+    font-style: $style;
+}

@@ -1,0 +1,86 @@
+/* ====================== 9, CONTACT ====================== */
+.contact{
+    background-image: url('../img/map-image.png');
+    background-size: cover;
+    background-color: $color-black;
+    background-position: center;
+    background-repeat: no-repeat;
+    &__section{
+        @include paddingTB(96px,96px);
+    }
+    &__title{
+        @extend .services__title;
+        text-align: center;
+        color: white;
+        margin-bottom: 16px;
+    }
+    &__description{
+        @extend .services__description;
+        text-align: center;
+        color: $color-muted;
+    }
+    &__input{
+        outline: none;
+        border-radius: 5px;
+        width: 100%;
+        padding: 23px 20px;
+        font-family: $fontRoboto;
+        font-weight: 400;
+        @include fontCustomized(16px,#495407,normal);
+        &::placeholder{
+            font-family: $fontMont;
+            font-weight: 700;
+            color: #ced4da;
+        }
+    }
+    &__form{
+        margin-bottom: 24px;
+    }
+
+    &__textArea{
+        height: 91%;
+    }
+    &__message{
+        min-height: 10rem;
+        font-family: $fontMont;
+        @include fontCustomized(16px,$color-black,normal);
+        outline: none;
+        border-radius: 5px;
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        &::placeholder{
+            font-family: $fontMont;
+            font-weight: 700;
+            color: #ced4da;
+        }
+    }
+    &__submit{
+        text-align: center;
+        margin-top: 48px;
+    }
+    &__btn{
+        background-color: $color-yellow;
+        padding: 20px 40px;
+        font-family: $fontMont;
+        font-weight: 700;
+        border-radius: 5px;
+        line-height: 27px;
+        text-transform: uppercase;
+        transition-duration: 0.2s; 
+        @include fontCustomized(18px,white,normal);
+        &:hover{
+            transition-duration: 0.2s;
+            background-color: #fdcd20;
+        }
+        &:focus{
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(243, 189, 1, 0.6);
+        }
+    }
+    @include max-breakpoint(768){
+        &__form:nth-child(3){
+            margin-bottom: 30px;
+        }
+    }
+}

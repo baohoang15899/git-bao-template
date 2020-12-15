@@ -1,0 +1,78 @@
+/* ====================== 7, TEAM ====================== */
+.team{
+    background-color: $color-light;
+    @extend .services;
+    @include paddingTB(96px,96px);
+    &__section{
+        @include  flex-customized(center,center,column);
+    }
+    &__title{
+        text-align: center;
+        @extend .services__title;
+    }
+    &__description{
+        text-align: center;
+        @extend .services__description;
+    }
+    &__member{
+        &-img{
+            border-radius: 50%;
+            width: 224px;
+            border: 8px solid rgba(0, 0, 0, 0.1);
+            height: 224px;
+        }
+        &-name{
+            line-height: 29px;
+            margin-top: 24px;
+            text-align: center;
+            font-family: $fontMont;
+            @include fontCustomized(24px,$color-black,normal)
+        }
+        &-role{
+            line-height: 28px;
+            text-align: center;
+            font-family: $fontRoboto;
+            @include fontCustomized(16px,$color-muted,normal)
+        }
+    }
+    &__social{
+        @include flex-customized(center ,center, row);
+        margin-top: 16px;
+    }
+    &__icon{
+        border-radius: 50%;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: #343a40;
+        transition-duration: 0.2s;
+        &:nth-child(2){
+            margin: auto 20px;
+        }
+        &:focus{
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(23, 26, 29, 0.4);
+        }
+        &:hover{
+            background-color: #151618;
+        }
+    }
+    &__link{
+        @include fontCustomized(16px,white,normal);
+        @include center(absolute);
+    }
+    &__text{
+        text-align: center;
+        margin: auto;
+        margin-bottom: 16px;
+        line-height: 1.75rem;
+        font-family: $fontRoboto;
+        @include fontCustomized(16px,$color-muted,normal);
+        margin-top: 36px;
+    }
+    @include max-breakpoint(992){
+        &__memberSecond{
+            margin: 45px auto;
+        }
+    }
+}

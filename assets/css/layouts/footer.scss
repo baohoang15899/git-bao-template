@@ -1,0 +1,59 @@
+/* ====================== 2, FOOTER ====================== */
+.footer{
+    @include paddingTB(24px,24px);
+    &__copyRight{
+        text-align: left;
+        font-family: $fontMont;
+        @include fontCustomized(14px,$color-black,normal)
+    }
+    &__pageGroup{
+        font-family: $fontMont;
+        text-align: right;
+    }
+    &__page{
+        @include fontCustomized(14px,#e6b301,normal);
+        &:hover{
+            text-decoration: underline;
+        }
+        &:nth-child(1){
+            margin-right: 10px;
+        }
+    }
+    &__iconGroup{
+        @include flex-customized(center,center,row);
+    }
+    &__icon{
+        border-radius: 50%;
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: #343a40;
+        transition-duration: 0.2s;
+        &:nth-child(2){
+            margin: auto 20px;
+        }
+        &:focus{
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(23, 26, 29, 0.4);
+            background-color: #151618;
+        }
+        &:hover{
+            background-color: #151618;
+        }
+    }
+    &__link{
+        @include fontCustomized(16px,white,normal);
+        @include center(absolute);
+    }
+    @include max-breakpoint(992){
+        &__copyRight{
+            text-align: center;
+        }
+        &__pageGroup{
+            text-align: center;
+        }
+        &__iconGroup{
+            margin: 20px auto;
+        }
+    }
+}

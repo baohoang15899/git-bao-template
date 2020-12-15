@@ -1,0 +1,193 @@
+/* ====================== 5, PORTFOLIO ====================== */
+.portfolio{
+    @extend .services;
+    background-color: $color-light;
+    &__section{
+        @extend .services__section;
+    }
+    &__title{
+        @extend .services__title;
+        text-align: center;
+    }
+    &__description{
+        @extend .services__description;
+        text-align: center;
+    }
+    &__img{
+        cursor: pointer;
+        position: relative;
+        &::after{
+            content: "";
+            background-color: rgba($color: $color-yellow, $alpha: 0.9);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            position: absolute;
+            transition-duration: 0.2s;
+        }
+        &-icon{
+            opacity: 0;
+            z-index: 500;
+            @include fontCustomized(50px,white,normal);
+            @include center(absolute);
+            transition-duration: 0.2s;
+        }
+        &:hover::after{
+            opacity: 1;
+            transition-duration: 0.2s;
+        }
+        &:hover &-icon{
+            transition-duration: 0.2s;
+            opacity: 1;
+        }
+    }
+    &__gallery{
+        max-width: 25rem;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: white;
+        &-Title{
+            margin-top: 26px;
+            text-align: center;
+            @include fontCustomized(24px,$color-black,normal);
+            font-family: $fontMont;
+        }
+        &-SubTitle{
+            text-align: center;
+            padding-bottom: 25px;
+            @include fontCustomized(16px,$color-muted,italic);
+            margin-top: 5px;
+            font-family: $fontDroid;
+        }
+    }
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3050;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity: 0;
+    transition: all ease-in-out 0.25s;
+    visibility: hidden;
+    background-color: rgba($color: black, $alpha: 0.5);
+    width: 100%;
+    height: 100%;
+    outline: 0;
+    &__wrapper{
+        max-width: 100vw;
+        margin: 16px;
+        transition: all ease-in-out 0.25s;
+        transform: translateY(-50px);
+        &.content__active{
+            transform: translateY(0px);
+        }
+    }
+    &__content{
+        @include paddingTB(96px,96px);
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        pointer-events: auto;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 0.3rem;
+        outline: 0;
+    }
+    &__close{
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+        background-color: transparent;
+        overflow: hidden;
+        vertical-align: middle;
+        border: none;
+        &-icon{
+            vertical-align: middle;
+            border-style: none;
+        }
+        &:hover{
+            opacity: 0.3;
+        }
+    }
+    &__body{
+        padding: 16px;
+        text-align: center;
+        &-title{
+            margin-bottom: 8px;
+            @include fontCustomized(48px,$color-black,normal);
+            line-height: 48px;
+            font-family: $fontMont;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        &-description{
+            margin-bottom: 32px;
+            @include fontCustomized(16px,$color-muted,italic);
+            font-family: $fontDroid;
+            font-weight: 400;
+        }
+        &-img{
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 32px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-text{
+            margin-bottom: 32px;
+            @include fontCustomized(16px,$color-black,normal);
+            font-family: $fontRoboto;
+            line-height: 28px;
+        }
+        &-list{
+            margin-bottom: 32px;
+            @include fontCustomized(16px,$color-black,normal);
+            font-family: $fontRoboto;
+            line-height: 28px;
+        }
+    }
+    &__closeBtn{
+        padding: 8px 14px;
+        background-color: $color-yellow;
+        @include fontCustomized(16px,white,normal);
+        font-family: $fontRoboto;
+        line-height: 24px;
+        border-radius: 4px;
+        font-weight: 400;
+        position: relative;
+        &-icon{
+            font-size: 15px;
+            height: 16px;
+            font-stretch: 100%;
+            width: 11px;
+            line-height: 24px;
+            margin-right: 6px;
+        }
+        &:focus{
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(243, 189, 1, 0.3);
+        }
+    }
+    &.modal__active{
+        overflow-y: scroll;
+        opacity: 1;
+        visibility: visible;
+    }
+    @include max-breakpoint(310){
+        &__body{
+            &-title{
+                font-size: 39px;
+            }
+        }
+    }
+}

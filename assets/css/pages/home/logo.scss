@@ -1,0 +1,13 @@
+/* ====================== 8, LOGO ====================== */
+.logo{
+    @include paddingTB(48px,48px);
+    &__img{
+        margin: auto;
+        width: 180px;
+    }
+    &__content{
+        padding-left: 12px;
+        padding-right: 12px;
+        margin: 16px 0px;
+    }
+}

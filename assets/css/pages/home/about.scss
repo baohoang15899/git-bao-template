@@ -1,0 +1,247 @@
+/* ====================== 6, ABOUT ====================== */
+.about{
+    &__section{
+        @include  flex-customized(center,center,column);
+        @extend .services;
+    }
+    &__title{
+        @extend .services__title;
+        text-align: center;
+    }
+    &__description{
+        @extend .services__description;
+        text-align: center;
+    }
+    &__timeline{
+        position: relative;
+        &::before{
+            z-index: -1;
+            position: absolute;
+            content: "";
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background-color: #e9ecef;
+        }
+        &-content{
+            &:nth-child(1){
+                margin-bottom: 50px;
+            }
+            &:nth-child(2){
+                margin-top: 200px;
+                margin-bottom: 50px;
+            }
+            &:nth-child(3){
+                margin-top: 200px;
+                margin-bottom: 50px;
+            }
+            &:nth-child(4){
+                margin-top: 200px;
+                margin-bottom: 50px;
+            }
+            &:nth-child(5){
+                margin-top: 200px;
+            }
+        }
+        &-img{
+            width: 166px;
+            height: 166px;
+            margin-left: auto;
+            margin-right: auto;
+            img{
+                background-color: $color-yellow;
+                border: 7px solid #e9ecef;
+                max-width: 100%;
+                height: auto;
+                border-radius: 50%;
+                padding: 1px;
+            }
+        }
+        &-last{
+            position: relative;
+            width: 166px;
+            height: 166px;
+            border-radius: 50%;
+            background-color: $color-yellow;
+            border: 7px solid #e9ecef;
+            h4{
+                padding: 1px;
+                @include center(absolute);
+                @include fontCustomized(18px,white,normal);
+                font-family: $fontMont;
+                text-align: center;
+            }
+        }
+        &-panel{
+            margin-top: -150px;
+            width: 41%;
+            line-height: 29px;
+            @include fontCustomized(24px,$color-black,normal);
+            box-sizing: border-box;
+            font-family: $fontMont;
+            p{
+                font-family: $fontDroid;
+                @include fontCustomized(16px,$color-muted,normal);
+            }
+            h4{
+                margin-bottom: 8px;
+            }
+            &::after{
+                box-sizing: border-box;
+            }
+            &::before{
+                box-sizing: border-box;
+            }
+        }
+        &-panelRight{
+            padding: 0 100px 20px 20px;
+            float: right;
+            text-align: left;
+            margin-left: 10px;
+        }
+        &-panelLeft{
+            padding: 0 20px 20px 100px;
+            text-align: right;
+            float: left;
+            margin-right: 10px;
+        }
+    }
+    @include max-breakpoint(992){
+        &__timeline{
+            &-img{
+                width: 100px;
+                height: 100px;
+            }
+            &-panel{
+                margin-top: -100px;
+            }
+            &-panelRight{
+                padding: 0 30px 20px 20px;
+            }
+            &-panelLeft{
+                padding: 0 20px 20px 30px;
+            }
+            &-last{
+                h4{
+                    font-family: $fontMont;
+                    font-weight: 700;
+                    @include fontCustomized(13px,white,normal);
+                }
+            }
+        }
+    }
+    @include max-breakpoint(768){
+        &__timeline{
+            &::before{
+                z-index: -1;
+                position: absolute;
+                content: "";
+                left: 40px;
+            }
+            &-img{
+                width: 75px;
+                height: 75px;
+                margin-left:5px;
+                margin-right: initial;
+            }
+            &-panel{
+                margin-top: -65px;
+                text-align: left;
+                width: 100%;
+                float: right;
+                padding: 0 20px 0 110px;
+            }
+            &-last{
+                h4{
+                    font-size: 9px;
+                }
+            }
+            &-content{
+                &:nth-child(2){
+                    margin-top: 300px;
+                }
+                &:nth-child(3){
+                    margin-top: 300px;
+                }
+                &:nth-child(4){
+                    margin-top: 300px;
+                }
+                &:nth-child(5){
+                    margin-top: 300px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(576){
+        &__timeline{
+            &-content{
+                &:nth-child(2){
+                    margin-top: 200px;
+                }
+                &:nth-child(3){
+                    margin-top: 200px;
+                }
+                &:nth-child(4){
+                    margin-top: 200px;
+                }
+                &:nth-child(5){
+                    margin-top: 200px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(470){
+        &__timeline{
+            &-content{
+                &:nth-child(2){
+                    margin-top: 300px;
+                }
+                &:nth-child(3){
+                    margin-top: 300px;
+                }
+                &:nth-child(4){
+                    margin-top: 300px;
+                }
+                &:nth-child(5){
+                    margin-top: 300px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(375){
+        &__timeline{
+            &-content{
+                &:nth-child(2){
+                    margin-top: 400px;
+                }
+                &:nth-child(3){
+                    margin-top: 400px;
+                }
+                &:nth-child(4){
+                    margin-top: 400px;
+                }
+                &:nth-child(5){
+                    margin-top: 400px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(320){
+        &__timeline{
+            &-content{
+                &:nth-child(2){
+                    margin-top: 500px;
+                }
+                &:nth-child(3){
+                    margin-top: 500px;
+                }
+                &:nth-child(4){
+                    margin-top: 500px;
+                }
+                &:nth-child(5){
+                    margin-top: 500px;
+                }
+            }
+        }
+    }
+}

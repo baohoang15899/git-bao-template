@@ -1,0 +1,58 @@
+/* ====================== 4, SERVICES ====================== */
+.services{
+    @include paddingTB(96px,96px);
+    &__section{
+        @include flex-customized(center,center,column);
+    }
+    &__title{
+        @include fontCustomized(40px,$color-black,normal);
+        font-family: $fontMont;
+        font-weight: 700;
+        line-height: 48px;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+    &__description{
+        text-align: center;
+        line-height: 19px;
+        @include fontCustomized(16px,$color-muted,italic);
+        font-family: $fontDroid;
+        margin-bottom: 64px;
+    }
+    &__content{
+        text-align: center;
+        &-img{
+            margin: auto;
+            width: 122px;
+            height: 123px;
+            position: relative;
+            border-radius: 50%;
+            background-color: $color-yellow;
+        }
+        &-icon{
+            @include center(absolute);
+            @include fontCustomized(64px,white,normal);
+        }
+        &-title{
+            margin-top: 18px;
+            margin-bottom: 16px;
+            @include fontCustomized(24px,$color-black,normal);
+            font-family: $fontMont;
+            line-height: 29px;
+        }
+        &-description{
+            line-height: 28px;
+            @include fontCustomized(16px,$color-muted,normal);
+            font-family: $fontRoboto;
+            font-weight: 400;
+        }
+    }
+    @include max-breakpoint(768){
+        &__description{
+            margin-bottom: 34px;
+        }
+        &__content{
+            margin-top: 30px;
+        }
+    } 
+}

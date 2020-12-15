@@ -1,0 +1,61 @@
+/* ====================== 3, BANNER ====================== */
+.banner{
+    background-image: url('../img/header-bg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__section{
+        @include paddingTB(272px,200px);
+        @include flex-customized(center,center,column);
+    }
+    &__title{
+        @include fontCustomized(36px,white,italic);
+        line-height: 36px;
+        font-family: $fontDroid;
+        font-weight: 400;
+        margin-bottom: 28px;
+        text-align: center;
+    }
+    &__subTitle{
+        line-height: 72px;
+        @include fontCustomized(72px,white,normal);
+        text-transform: uppercase;
+        font-family: $fontMont;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 64px;
+    }
+    &__btn{
+        padding: 20px 40px;
+        background-color: $color-yellow;
+        @include fontCustomized(18px,white,normal);
+        text-transform: uppercase;
+        font-family: $fontMont;
+        font-weight: 700;
+        border-radius: 5px;
+        line-height: 27px;
+        border: 1px solid transparent;
+        transition-duration: 0.2s;
+        &:hover{
+            transition-duration: 0.2s;
+            background-color: #f7c719;
+        }
+        &:focus{
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(243, 189, 1, 0.6);
+        }
+    }
+    @include max-breakpoint(768){
+        &__section{
+            @include paddingTB(168px,96px);
+        }
+        &__title{
+            font-size: 24px;
+            line-height: 24px;
+        }
+        &__subTitle{
+            font-size: 52px;
+            line-height: 52px;
+        }
+    } 
+}
